@@ -92,7 +92,11 @@
               class="fa fa-file"></i>{{_id}}</a></td>
           {{#each values_in_order}}
           <td data-field='{{ field_name }}' class='houston-collection-field'>
-            {{field_value }}
+            {{#if is_image field_value}}
+              <img src="{{field_value}}" alt="" width="150" height="150">
+            {{else}}
+              {{ field_value }}
+            {{/if}}
           </td>
           {{/each}}
           <td>
